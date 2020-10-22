@@ -5,10 +5,8 @@ const data = require("./data.json")
 const app = express();
 const port = process.env.PORT || "8000";
 
+app.use('/', express.static(__dirname + '/public'));
 
-app.get("/", (req, res) => {
-    res.status(200).send("Helow ECP Team");
-});
 app.get("/team", (req, res) => {
     res.status(200).send(data);
 });
